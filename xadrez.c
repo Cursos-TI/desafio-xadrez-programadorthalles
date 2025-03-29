@@ -10,32 +10,31 @@ int main(){
     
     //TORRE Move-se 5 casas para a direita
     printf("\n");
-    printf("TORRE\n");
+    printf("Movimentação da TORRE:\n");
     
     for (torre = 1; torre <= 5; torre++)
     {
-        printf("%d DIREITA\n", torre);
+        printf("%d Direia\n", torre);
     }
 
     //BISPO cinco casas na diagonal para cima e à direita.
     printf("\n");
-    printf("BISPO \n");
+    printf("Movimentação do BISPO: \n");
 
     while (bispo <= 5)
     {
-        printf("%d cima\n", bispo);
-        printf("%d direita \n", bispo);
+        printf("%d Cima, Direita \n", bispo);
         bispo++;
     }
 
     //RAINHA movimento oito casas para a esquerda.
     printf("\n");
-    printf("RAINHA \n");
+    printf("Movimentação da RAINHA: \n");
 
     do
     {
         
-        printf("%d esquerda\n", rainha);
+        printf("%d Esquerda\n", rainha);
         rainha++;
 
     } while (rainha <= 8);

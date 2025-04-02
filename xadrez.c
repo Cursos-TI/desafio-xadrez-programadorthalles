@@ -73,8 +73,8 @@ int main(){
             for(cavalo = 0; cavalo <1; ++cavalo){
                 printf("cima\n");
             }
-        printf("direira \n");
-        printf("direira \n");
+        printf("direita \n");
+        printf("direita \n");
         
         }
         break;
@@ -89,7 +89,7 @@ int main(){
             for(cavalo = 0; cavalo <2; ++cavalo){
                 printf("cima\n");
             }
-        printf("direira \n");
+        printf("direita \n");
         }
         break;
      {

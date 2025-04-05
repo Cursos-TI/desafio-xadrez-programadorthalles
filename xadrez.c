@@ -1,142 +1,66 @@
 #include <stdio.h>
 
-int main(){
-    //Movimentando as Peças do xadrez
-    //Desafio: nível novato
-
-
-
-    int torre = 1, bispo = 1 ,rainha = 1;
+         //Desafio: nível mestre
+        //Criando Movimentos Complexos
     
-    //TORRE Move-se 5 casas para a direita
-    printf("\n");
-    printf("Movimentacao da TORRE:\n");
+     //TORRE Move-se 5 casas para a direita = #recursividade
+      void moverTorre(int torre){
+        if (torre > 0 ){
     
-    for (torre = 1; torre <= 5; torre++)
-    {
-        printf("%d Direia\n", torre);
-    }
-
-    //BISPO cinco casas na diagonal para cima e à direita.
-    printf("\n");
-    printf("Movimentacao do BISPO: \n");
-
-    while (bispo <= 5)
-    {
-        printf("%d Cima, Direita \n", bispo);
-        bispo++;
-    }
-
-    //RAINHA movimento oito casas para a esquerda.
-    printf("\n");
-    printf("Movimentacao da RAINHA: \n");
-
-    do
-    {
-        
-        printf("%d Esquerda\n", rainha);
-        rainha++;
-
-    } while (rainha <= 8);
-
-
-    //Desafio: nível aventureiro
-    //Movimentando o Cavalo
-
-    int  movimento = 1;
-    int cavalo;
-    int opcao1;
-
-    printf("\n");
-
-    // ** MENU INTERATIVO **// 
-
-    printf("* MOVIMENTO DO CAVALO ESCOLHA UMA OPCAO*\n");
-    printf("[1] - (1 VEZ PRA CIMA, E 2 PRA DIREITA )\n");
-    printf("[2] - (2 VEZ PRA CIMA, E 1 PRA DIREITA ) \n");
-    printf("[3] - (1 VEZ PRA BAIXO, E 2 PRA ESQUERDA ) \n");
-    printf("[4] - (2 VEZ PRA BAIXO, E 1 PRA ESQUERDA )\n");
-
-    printf("digite a opcao desejada: ");
-    scanf("%d", &opcao1);
-
-    //O Cavalo se move 1 casas pra cima e depois duas casa a direita um "L"
- printf("\n");
-    switch (opcao1)
-    {
-    case 1: 
-    printf("MOVIMENTO DO CAVALO OPCAO 1: \n");
-    
-  
-        while (movimento --)
-        {
-            for(cavalo = 0; cavalo <1; ++cavalo){
-                printf("cima\n");
+        moverTorre(torre - 1);
+        printf("%d Direita\n", torre);
             }
-        printf("direita \n");
-        printf("direita \n");
-        
-        }
-        break;
-         {
-            //O Cavalo se move 2 casas pra cima e depois uma casa a direita um "L"
-    case 2:
-    printf("MOVIMENTO DO CAVALO OPCAO 2: \n");
     
          }
-        while (movimento --)
-         {
-            for(cavalo = 0; cavalo <2; ++cavalo){
-                printf("cima\n");
-            }
-        printf("direita \n");
-        }
-        break;
-     {
-        //O Cavalo se move 1 casas pra baixo e depois duas casa a esquerda um "L"
-    case 3:
-    printf("MOVIMENTO DO CAVALO OPCAO 3: \n");
-    
-     }
-        while (movimento --)
-        {
-            for(cavalo = 0; cavalo <1; ++cavalo){
-                printf("baixo\n");
-            }
-        printf("Esquerda \n");
-        printf("Esquerda \n");
-        
-        }
-        break;
-     {
-        //O Cavalo se move 2 casas pra baixo e depois uma casa a esquerda um "L"
-    case 4:
-    printf("MOVIMENTO DO CAVALO OPCAO 4: \n");
-    
-  
-        while (movimento --)
-        {
-            for(cavalo = 0; cavalo <2; ++cavalo){
-                printf("baixo\n");
-            }
-        printf("Esquerda \n");
-        
-        
-        
-        break;
-    
-    
-    default:printf("opcao invalida * TENTE NOVAMENTE * \n");
-        break;
-    }
-    
- 
- 
-    
 
+        //BISPO 5 casas na diagonal para cima e à direita = #Loops Aninhados 
+         void moverBispo(){
+            printf("\n");
+            printf("Movimentacao da BISPO:\n");
+            for (int linha = 1; linha <= 5; linha++){
+             for(int coluna = 1; coluna <= 2; coluna++){
+             printf(coluna == 1 ? "%d Cima ," : " Direita\n", linha);
+            }
+            }
+             }
 
+            //RAINHA movimento 8 casas para a esquerda = #recursividade
+        void moverRainha(int rainha){  
+            if (rainha > 0 ){
+        
+            moverRainha(rainha - 1);
+            printf("%d Esquerda\n", rainha);
+                }
+        
+             }
+            
+            //invoca ambas funções
+            int main(){
+
+            int torre = 5;
+            printf("\n");
+            printf("Movimentacao da TORRE:\n");
+            moverTorre(torre);
+        
+            moverBispo();
+
+            int rainha = 8;
+            printf("\n");
+            printf("Movimentacao da RAINHA:\n");
+            moverRainha(rainha);
+        
     
-}
-        return 0;
-    }
-}
+            // CAVALO movimento 2 casas pra cima e depois 1 casa a direita um "L" = #Loops Complexos
+               printf("\n");
+              printf("Movimentacao da CAVALO: \n");
+            for (int cavalo = 1; cavalo <= 2; cavalo++) {
+            printf("%d Cima\n",cavalo);
+              if (cavalo == 2) { 
+             for (int cavaloo = 1; cavaloo < 2;  cavaloo++) {
+            printf("3 Direita\n");
+              }
+              }
+             }
+                     return 0;
+            }
+    
